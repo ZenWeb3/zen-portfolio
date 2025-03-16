@@ -8,7 +8,7 @@ const poppins = Poppins({
 });
  
 export const metadata = {
-  metadataBase: new URL("https://samuelportfolio.vercel.com"),
+  metadataBase: new URL("https://zen-portfolio-phi.vercel.app/"),
   title: "Samuel Edohoeket | Creative Software Engineer",
   description: "Creative Software Engineer with 4 years of experience, specializing in web development and app development. Building scalable products with great user experiences.",
   keywords: [
@@ -34,7 +34,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "Samuelportfolio.vercel.com", 
+    url: "https://zen-portfolio-phi.vercel.app/", 
     siteName: "Samuel Edohoekt Portfolio",
     title: "Robinson Honour | Creative Software Engineer",
     description: "Creative Software Engineer specializing in web development, app development, robotics, and cloud computing. Building scalable products with great user experiences.",

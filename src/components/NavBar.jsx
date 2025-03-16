@@ -1,19 +1,24 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const NavBar = () => {
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full bg-[#121212] opacity-90 py-1 ">
+    <nav className="fixed top-0 left-0 z-50 w-full bg-[#0b040c] opacity-90 py-1 ">
       <div className="container mx-auto flex items-center  justify-between h-16 px-10 lg:px-12">
         {/* Brand Logo */}
         <div className="flex items-center">
-          <a href="/" className="font-bold  sm:text-3xl text-2xl text-white">
-            Zen⚡
-          </a>
+          <Link
+            href="/"
+            className={`font-bold  sm:text-3xl text-2xl text-white`}
+          >
+            Zen
+            <span className="inline-block ml-4 transform hover:scale-110 transition-transform">⚡</span>
+          </Link>
         </div>
         {/* GitHub Link */}
         <div className="flex items-center">
-          <a
+          <Link
             href="http://www.github.com/zenweb3"
             target="_blank"
             rel="noopener noreferrer"
@@ -29,7 +34,7 @@ const NavBar = () => {
               />
               <span className="text-white font-bold">GitHub</span>
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
