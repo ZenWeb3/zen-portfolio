@@ -63,7 +63,7 @@ export const services = [
 
 const Services = () => {
   return (
-    <section className="py-24 px-0 overflow-hidden">
+    <section className="sm:py-24 py-20 px-0 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -3,6 +3,8 @@ import HeroSection from "@/components/HeroSection";
 import Services from "@/components/Services";
 import Project from "@/components/Project";
 import Skills from "@/components/Skills";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -21,9 +23,15 @@ export default function Home() {
       <section className="bg-[#2c0f4d19] py-16">
         <div className="container mx-auto px-6 lg:px-12">
           <Project />
-          <Skills/>
+        </div>
+        <div className="container mx-auto py-10 px-6 lg:px-12">
+          <Skills />
         </div>
       </section>
+      <div className="container mx-auto py-10 px-6 lg:px-12">
+        <Contact/>
+        <Footer/>
+      </div>
     </main>
   );
 }

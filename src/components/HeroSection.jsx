@@ -48,7 +48,7 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.3 }}
             className="text-[#adb7be] sm:text-lg mb-4 text-base lg:text-xl"
           >
-            Hey there! I'm Samuel Edohoeket, a passionate Fullstack Developer
+            Hey there! I'm Samuel Edohoeket, a passionate Fullstack Developer with over 3+ years of experience,
             specializing in both web and mobile development. With a strong
             foundation in React, Next.js, React Native, Python, and Firebase, I
             build modern, high-performance applications that deliver seamless

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { projects } from "../data/data";
 import Link from "next/link";
 import { MoveUpRight } from "lucide-react";
+import Skills from "./Skills";
 
 const Project = () => {
   return (
@@ -63,11 +64,10 @@ const Project = () => {
           </motion.div>
         ))}
       </div>
+      
     </section>
   );
 };
 
 export default Project;
-{
-  /*; */
-}
+

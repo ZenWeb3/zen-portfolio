@@ -35,7 +35,7 @@ export const projects = [
   },
 ];
 
-export const stack = [
+export const stacks = [
   {
     id: 0,
     lang: "Html",
