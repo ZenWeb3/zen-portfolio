@@ -35,9 +35,9 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://zen-portfolio-phi.vercel.app/", 
-    siteName: "Samuel Edohoekt Portfolio",
-    title: "Robinson Honour | Creative Software Engineer",
-    description: "Creative Software Engineer specializing in web development, app development, robotics, and cloud computing. Building scalable products with great user experiences.",
+    siteName: "Samuel Edohoeket Portfolio",
+    title: "Samuel Edohoeket | Creative Software Developer",
+    description: "Creative Software Engineer specializing in web development, app development and Smart Contract.",
     images: [
       {
         url: "/portfolio-img.png",

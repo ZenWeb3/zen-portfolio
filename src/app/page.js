@@ -30,7 +30,6 @@ export default function Home() {
       </section>
       <div className="container mx-auto py-10 px-6 lg:px-12">
         <Contact/>
-        <Footer/>
       </div>
     </main>
   );
