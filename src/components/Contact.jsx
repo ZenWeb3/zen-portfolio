@@ -56,18 +56,50 @@ const Contact = () => {
           </a>
         </div>
 
-        {/* Phone */}
+       
+
         <div className="flex flex-col items-center gap-[10px]">
-          <div className="bg-gradient-to-r to-[#CFFAFF] from-[#CFFAFF00] p-[1px] max-w-[75px] max-h-[50px]">
-            <Icons.Phone className="w-[30px] h-[30px] p-2 md:p-[5px] bg-[#0b040c] md:w-[36px] md:h-[36px]" />
-          </div>
-          <a
-            href="tel:+2347026839909"
-            className="text-[#FFFFFF99] text-base font-medium md:text-[20px] md:leading-[30px]"
-          >
-            +234 702 683 9909
-          </a>
-        </div>
+  <div className="bg-gradient-to-r to-[#CFFAFF] from-[#CFFAFF00] p-[1px] max-w-[75px] max-h-[75px]">
+    <Icons.Twitter className="w-[30px] h-[30px] p-2 md:p-[5px] bg-[#0b040c] md:w-[36px] md:h-[36px]" />
+  </div>
+  <a
+    href="https://twitter.com/zenonchain"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[#FFFFFF99] text-base font-medium md:text-[20px] md:leading-[30px]"
+  >
+    @Zen.sui
+  </a>
+</div>
+
+<div className="flex flex-col items-center gap-[10px]">
+  <div className="bg-gradient-to-r to-[#CFFAFF] from-[#CFFAFF00] p-[1px] max-w-[75px] max-h-[75px]">
+    <Icons.Telegram className="w-[30px] h-[30px] p-2 md:p-[5px] bg-[#0b040c] md:w-[36px] md:h-[36px]" />
+  </div>
+  <a
+    href="https://t.me/codewithzen"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[#FFFFFF99] text-base font-medium md:text-[20px] md:leading-[30px]"
+  >
+    Zen
+  </a>
+</div>
+
+{/* TikTok */}
+<div className="flex flex-col items-center gap-[10px]">
+  <div className="bg-gradient-to-l from-[#CFFAFF] to-[#CFFAFF00] p-[1px] max-w-[75px] max-h-[75px]">
+    <Icons.Tiktok className="w-[30px] h-[30px] p-2 md:p-[5px] bg-[#0b040c] md:w-[36px] md:h-[36px]" />
+  </div>
+  <a
+    href="https://www.tiktok.com/@codewithzen"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[#FFFFFF99] text-base font-medium md:text-[20px] md:leading-[30px]"
+  >
+    @codewithzen
+  </a>
+</div>
 
         {/* Location */}
         <div className="flex flex-col items-center gap-[10px]">

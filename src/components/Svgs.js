@@ -1,12 +1,13 @@
-import { BsDiscord, BsTwitter, BsTelegram, BsWhatsapp } from "react-icons/bs";
-import { MdLocationOn, MdMail, MdPhone } from "react-icons/md";
+import { BsDiscord, BsTwitterX, BsTelegram, BsWhatsapp, BsTiktok } from "react-icons/bs";
+import { MdLocationOn, MdMail } from "react-icons/md";
 
 export const Icons = {
-  Twitter: BsTwitter,
+  Twitter: BsTwitterX,
   Discord: BsDiscord,
   Telegram: BsTelegram,
   Whatsapp: BsWhatsapp,
-  Phone: MdPhone,
+
   Location: MdLocationOn,
   Mail: MdMail,
+  Tiktok:BsTiktok
 };
