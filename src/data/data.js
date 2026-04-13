@@ -99,9 +99,18 @@ export const projects = [
     description:
       "A platform that helps devs or users easily generate Readme docs of public available repos.",
     tech: ["Next JS", "TypeScript", "Grok", "Gemini AI"],
-    categiry: "open-source",
+    category: "open-source",
     github: "https://github.com/zenweb3/zerodocs",
     link: "https://zerodocs.pxxl.pro",
+  },
+  {
+    id: 10,
+    title: "Toilet Flush",
+    description: "The lottery based site for toiletdust meme coin on sui",
+    tech: ["Html", "Javascript", "Sui SDK"],
+    category: "work",
+    link: "https://toilet.pxxl.pro/",
+    github: "#"
   },
 ];
 

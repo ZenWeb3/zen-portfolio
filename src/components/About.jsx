@@ -25,25 +25,26 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-[#a1a1a1]">
               <p>
-                I'm a software developer based in Nigeria, passionate about
+                I'm a software developer, passionate about
                 building products at the intersection of{" "}
                 <span className="text-[#fafafa]">Web3</span>,{" "}
                 <span className="text-[#fafafa]">AI</span>, and{" "}
                 <span className="text-[#fafafa]">fintech</span>.
               </p>
               <p>
-                Currently working as a Software Developer at{" "}
+                Previously worked as a Software Developer at{" "}
                 <span className="text-[#00ff88]">Rootcare Pharmaceuticals</span>{" "}
-                where I build and maintain their inventory management system,
-                while also interning in IT & Networking at{" "}
-                <span className="text-[#00ff88]">Ceedapeg Hotels</span>.
+                where I built their inventory management system, and as an IT &
+                Networking Intern at{" "}
+                <span className="text-[#00ff88]">Ceedapeg Hotels</span>. I also help
+                build websites and other infra tools for web3 projects.{" "}
+                
               </p>
               <p>
-                Previously shipped mobile apps at{" "}
-                <span className="text-[#fafafa]">Suiver</span>. I've won
-                multiple hackathons including W3Node Cape Town and Story
-                Protocol, and published open-source packages used by developers
-                worldwide.
+                Won the Story Protocol Hackathon and published open-source
+                packages like <span className="text-[#fafafa]">zeroReg</span>{" "}
+                and <span className="text-[#fafafa]">ZeroDocs</span> used by
+                developers worldwide.
               </p>
             </div>
 
@@ -72,22 +73,23 @@ export default function About() {
           <div>
             <span className="section-title">Tech Stack</span>
             <div className="mt-6 space-y-6">
-              {Object.entries(stackCategories).map(([category, items]) => (
-                items.length > 0 && (
-                  <div key={category}>
-                    <h3 className="text-sm text-[#666] mb-3 font-mono">
-                      {category}
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {items.map((stack) => (
-                        <span key={stack.id} className="tech-tag">
-                          {stack.name}
-                        </span>
-                      ))}
+              {Object.entries(stackCategories).map(
+                ([category, items]) =>
+                  items.length > 0 && (
+                    <div key={category}>
+                      <h3 className="text-sm text-[#666] mb-3 font-mono">
+                        {category}
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {items.map((stack) => (
+                          <span key={stack.id} className="tech-tag">
+                            {stack.name}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )
-              ))}
+                  ),
+              )}
             </div>
           </div>
         </div>
