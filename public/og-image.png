@@ -1,0 +1,51 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#111111"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#00ff88"/>
+    </linearGradient>
+    <linearGradient id="orbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Floating orbs -->
+  <circle cx="150" cy="200" r="200" fill="url(#orbGrad)"/>
+  <circle cx="1050" cy="450" r="250" fill="url(#orbGrad)"/>
+  
+  <!-- Status indicator -->
+  <rect x="460" y="160" width="280" height="36" rx="18" fill="#111111" stroke="#222222" stroke-width="1"/>
+  <circle cx="482" cy="178" r="5" fill="#00ff88"/>
+  <text x="500" y="184" font-family="ui-monospace, monospace" font-size="14" fill="#a1a1a1">Available for work</text>
+  
+  <!-- Main name -->
+  <text x="600" y="280" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#ffffff">Samuel Edohoeket</text>
+  
+  <!-- Popularly known as -->
+  <text x="600" y="340" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#666666">popularly known as</text>
+  
+  <!-- Zen with accent -->
+  <text x="600" y="410" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="700" fill="url(#textGrad)">zen</text>
+  
+  <!-- Role -->
+  <text x="600" y="480" text-anchor="middle" font-family="ui-monospace, monospace" font-size="20" fill="#a1a1a1">Software Developer  •  Web3  •  AI</text>
+  
+  <!-- Bottom bar -->
+  <rect x="0" y="590" width="1200" height="40" fill="#0d0d0d"/>
+  <text x="40" y="616" font-family="ui-monospace, monospace" font-size="16" fill="#666666">zen-portfolio-phi.vercel.app</text>
+  <text x="1160" y="616" text-anchor="end" font-family="system-ui, sans-serif" font-size="16" fill="#00ff88">@zenonchain</text>
+</svg>

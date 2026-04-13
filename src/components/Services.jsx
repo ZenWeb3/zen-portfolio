@@ -37,7 +37,7 @@ export const services = [
   },
   {
     id: 4,
-    title: "SMART CONTRACT DEVELOPMENT (SUI - MOVE)",
+    title: "SMART CONTRACT DEVELOPMENT",
     description:
       "Exploring Move Smart Contract development on the Sui blockchain. Experimenting with DApps and blockchain integration.",
     icon: Link,
@@ -47,7 +47,7 @@ export const services = [
     id: 5,
     title: "DATABASE MANAGEMENT",
     description:
-      "Designing and managing databases using SQL and NoSQL technologies. Ensuring data integrity and optimization for high performance.",
+      "Designing and managing databases using  NoSQL technologies. Ensuring data integrity and optimization for high performance.",
     icon: Database,
     category: "Infrastructure",
   },

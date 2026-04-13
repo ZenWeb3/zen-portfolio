@@ -1,24 +1,63 @@
-import { Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const poppins = Poppins({ 
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: "400", 
+// Using existing Signika fonts
+const signika = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Signika-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Signika-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Signika-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Signika-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Signika-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-sora",
 });
- 
+
 export const metadata = {
   metadataBase: new URL("https://zen-portfolio-phi.vercel.app/"),
-  title: "Samuel Edohoeket | Creative Software Engineer",
-  description: "Creative Software Engineer with 4 years of experience, specializing in web development and app development. Building scalable products with great user experiences.",
+  title: "Samuel Edohoeket | Zen — Software Developer",
+  description:
+    "Software Developer specializing in Web3, AI-assisted development, and full-stack applications. Building the future with code.",
   keywords: [
-    "Software Engineer",
-    "Web Development",
-    "App Development",
-    "Web3 Enthusiast",
-    "Samuel Edohoeket"
+    "Samuel Edohoeket",
+    "Zen",
+    "ZeroDocs",
+    "Top akwa ibom software developer",
+    "Zen software engineer",
+    "ZenWeb3",
+    "Software Developer",
+    "Web3 Developer",
+    "Full Stack Developer",
+    "React Developer",
+    "Next.js Developer",
+    "TypeScript",
+    "Python",
+    "Nigeria Developer",
+    "Hackathon Winner",
+    "zeroReg",
+    "RemitAI",
   ],
-  authors: [{ name: "Samuel Edohoeket" }],
+  authors: [{ name: "Samuel Edohoeket", url: "https://twitter.com/zenonchain" }],
   creator: "Samuel Edohoeket",
   publisher: "Samuel Edohoeket",
   formatDetection: {
@@ -34,25 +73,27 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://zen-portfolio-phi.vercel.app/", 
-    siteName: "Samuel Edohoeket Portfolio",
-    title: "Samuel Edohoeket | Creative Software Developer",
-    description: "Creative Software Engineer specializing in web development, app development and Smart Contract.",
+    url: "https://zen-portfolio-phi.vercel.app/",
+    siteName: "Zen Portfolio",
+    title: "Samuel Edohoeket | Zen — Software Developer",
+    description:
+      "Software Developer specializing in Web3, AI-assisted development, and full-stack applications. Building the future with code.",
     images: [
       {
-        url: "/portfolio-img.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Samuel Edohoeket - Creative Software Engineer",
+        alt: "Samuel Edohoeket - Zen | Software Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Samuel Edohoeket | Creative Software Engineer",
-    description: "Creative Software Engineer building scalable products with great user experiences.",
-    creator: "@samuel_edohoeketet",
-    images: ["/portfolio-img.png"],
+    title: "Samuel Edohoeket | Zen — Software Developer",
+    description:
+      "Software Developer specializing in Web3, AI-assisted development, and full-stack applications.",
+    creator: "@zenonchain",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -65,15 +106,21 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "", 
+  alternates: {
+    canonical: "https://zen-portfolio-phi.vercel.app/",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${poppins.variable} antialiased`}>
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="canonical" href="https://zen-portfolio-phi.vercel.app/" />
+        <meta name="theme-color" content="#0a0a0a" />
+      </head>
+      <body
+        className={`${signika.variable} font-sans antialiased`}
+      >
         {children}
       </body>
     </html>

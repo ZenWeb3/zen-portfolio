@@ -1,120 +1,108 @@
 "use client";
-import { useState, useEffect } from "react";
-import { Icons } from "./Svgs"; // Ensure correct path to this file
 
-const getTimeOfDay = () => {
-  const now = new Date();
-  const currentHour = now.getHours();
+import { socialLinks } from "@/data/data";
 
-  if (currentHour >= 6 && currentHour < 12) {
-    return "morning";
-  } else if (currentHour >= 12 && currentHour < 18) {
-    return "afternoon";
-  } else {
-    return "evening";
-  }
-};
-
-const Contact = () => {
-  const [timeOfDay, setTimeOfDay] = useState(getTimeOfDay());
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeOfDay(getTimeOfDay());
-    }, 60000); // Update every minute
-
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
-
+export default function Contact() {
   return (
-    <section className="mx-[30px] lg:mx-[76px] lg:mt-[150px]">
-      <div className="flex flex-col items-center gap-[35px] md:gap-[25px]">
-        <h3 className="font-medium text-[#FFFFFF99] text-lg text-center max-w-[320px] md:max-w-[992px] md:text-[25px] mmd:leading-[37.5px]">
-          I can help you design, improve, or build the product experience for
-          your new or existing products. Feel free to get in touch with me.
-        </h3>
-        <h1 className="font-clashbold font-semibold text-xl text-white md:text-[60px] md:leading-[73.8px]">
-          Do You Have Any Ideas?
-        </h1>
-
-        <p className="flex items-center font-semibold text-[15px] leading-[22.5px] md:text-[20px] md:leading-[30px] text-[#FFFFFF99]">
-          SAY HELLO! <small className="animate-bounce">👋</small>
+    <section id="contact" className="py-24 md:py-32 bg-[#0d0d0d]">
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <span className="section-title">Contact</span>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-6">
+          Let's build something
+          <span className="block text-gradient">together</span>
+        </h2>
+        <p className="text-lg text-[#a1a1a1] mb-10 max-w-2xl mx-auto">
+          Got a project in mind? Looking for a developer who can ship fast?
+          Let's talk about how I can help bring your ideas to life.
         </p>
-      </div>
 
-      <div className="mt-[51px] flex flex-col gap-[60px] lg:flex-row items-center justify-center">
-        {/* Email */}
-        <div className="flex flex-col items-center gap-[10px]">
-          <div className="bg-gradient-to-l from-[#CFFAFF] to-[#CFFAFF00] p-[1px] max-w-[75px] max-h-[75px]">
-            <Icons.Mail className="w-[30px] h-[30px] p-2 md:p-[5px] bg-[#0b040c] md:w-[36px] md:h-[36px]" />
-          </div>
+        {/* CTA */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <a
-            className="text-[#FFFFFF99] font-medium text-base md:text-[20px] md:leading-[30px]"
-            href="mailto:samueledohoeket257@gmail.com"
+            href={`mailto:${socialLinks.email}`}
+            className="btn-primary text-lg px-8 py-4"
           >
-            samueledohoeket257@gmail.com
+            Say Hello
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
           </a>
         </div>
 
-       
+        {/* Social links */}
+        <div className="flex items-center justify-center gap-6">
+          <a
+            href={socialLinks.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[#a1a1a1] hover:text-[#fafafa] transition-colors group"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+            <span className="relative">
+              GitHub
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#fafafa] transition-all group-hover:w-full" />
+            </span>
+          </a>
 
-        <div className="flex flex-col items-center gap-[10px]">
-  <div className="bg-gradient-to-r to-[#CFFAFF] from-[#CFFAFF00] p-[1px] max-w-[75px] max-h-[75px]">
-    <Icons.Twitter className="w-[30px] h-[30px] p-2 md:p-[5px] bg-[#0b040c] md:w-[36px] md:h-[36px]" />
-  </div>
-  <a
-    href="https://twitter.com/zenonchain"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-[#FFFFFF99] text-base font-medium md:text-[20px] md:leading-[30px]"
-  >
-    @Zen.sui
-  </a>
-</div>
+          <span className="text-[#333]">·</span>
 
-<div className="flex flex-col items-center gap-[10px]">
-  <div className="bg-gradient-to-r to-[#CFFAFF] from-[#CFFAFF00] p-[1px] max-w-[75px] max-h-[75px]">
-    <Icons.Telegram className="w-[30px] h-[30px] p-2 md:p-[5px] bg-[#0b040c] md:w-[36px] md:h-[36px]" />
-  </div>
-  <a
-    href="https://t.me/codewithzen"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-[#FFFFFF99] text-base font-medium md:text-[20px] md:leading-[30px]"
-  >
-    Zen
-  </a>
-</div>
+          <a
+            href={socialLinks.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[#a1a1a1] hover:text-[#fafafa] transition-colors group"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            <span className="relative">
+              @zenonchain
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#fafafa] transition-all group-hover:w-full" />
+            </span>
+          </a>
 
-{/* TikTok */}
-<div className="flex flex-col items-center gap-[10px]">
-  <div className="bg-gradient-to-l from-[#CFFAFF] to-[#CFFAFF00] p-[1px] max-w-[75px] max-h-[75px]">
-    <Icons.Tiktok className="w-[30px] h-[30px] p-2 md:p-[5px] bg-[#0b040c] md:w-[36px] md:h-[36px]" />
-  </div>
-  <a
-    href="https://www.tiktok.com/@codewithzen"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-[#FFFFFF99] text-base font-medium md:text-[20px] md:leading-[30px]"
-  >
-    @codewithzen
-  </a>
-</div>
+          <span className="text-[#333]">·</span>
 
-        {/* Location */}
-        <div className="flex flex-col items-center gap-[10px]">
-          <div className="bg-gradient-to-l from-[#CFFAFF] to-[#CFFAFF00] p-[1px] max-w-[75px] max-h-[75px]">
-            <Icons.Location className="w-[30px] h-[30px] p-2 md:p-[5px] bg-[#0b040c] md:w-[36px] md:h-[36px]" />
-          </div>
-          <p className="text-[#FFFFFF99] text-base mx-auto text-center font-medium md:text-[20px] md:leading-[30px]">
-            {timeOfDay === "morning" && <span>Metaverse! ⚡</span>}
-            {timeOfDay === "afternoon" && <span>localhost:3000</span>}
-            {timeOfDay === "evening" && <span>127.0.0.1:5500</span>}
-          </p>
+          <a
+            href={socialLinks.telegram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[#a1a1a1] hover:text-[#fafafa] transition-colors group"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+            </svg>
+            <span className="relative">
+              Telegram
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#fafafa] transition-all group-hover:w-full" />
+            </span>
+          </a>
         </div>
       </div>
     </section>
   );
-};
-
-export default Contact;
+}
