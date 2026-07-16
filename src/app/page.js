@@ -1,21 +1,17 @@
-import NavBar from "@/components/NavBar";
-import HeroSection from "@/components/HeroSection";
-import About from "@/components/About";
-import Projects from "@/components/Projects";
-import Experience from "@/components/Experience";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import Hero from "@/components/home/Hero";
+import About from "@/components/home/About";
+import SelectedWork from "@/components/home/SelectedWork";
+import ExperienceTimeline from "@/components/home/ExperienceTimeline";
+import Contact from "@/components/home/Contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white noise grid-pattern">
-      <NavBar />
-      <HeroSection />
+    <main>
+      <Hero />
       <About />
-      <Projects />
-      <Experience />
+      <SelectedWork />
+      <ExperienceTimeline />
       <Contact />
-      <Footer />
     </main>
   );
 }
