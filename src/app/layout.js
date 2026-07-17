@@ -44,7 +44,10 @@ export const metadata = {
   description: site.bio,
   keywords: [
     site.name,
-    site.alias,
+    ...site.aliases,
+    `${site.name} developer`,
+    `${site.name} Web3`,
+    `${site.alias} developer`,
     ...site.roles,
     "Web3 Developer",
     "Developer Relations",
@@ -52,6 +55,10 @@ export const metadata = {
     "Next.js Developer",
     "zeroReg",
     "ZeroDocs",
+    "Software Developer in Akwa Ibom",
+    "Best Developer in Akwa Ibom",
+    "Akwa Ibom Developer",
+    "Nigerian Software Engineer",
   ],
   authors: [{ name: site.name, url: site.social.twitter }],
   creator: site.name,
@@ -107,10 +114,22 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "Person",
     name: site.name,
-    alternateName: site.alias,
+    alternateName: site.aliases,
     url: siteUrl,
     jobTitle: site.roles.join(", "),
-    sameAs: [site.social.github, site.social.twitter, site.social.telegram],
+    description: site.bio,
+    knowsAbout: ["Software Engineering", "Web3", "Developer Relations", "Next.js", "Solidity"],
+    homeLocation: {
+      "@type": "Place",
+      name: site.location,
+      address: { "@type": "PostalAddress", addressRegion: "Akwa Ibom", addressCountry: "NG" },
+    },
+    sameAs: [
+      site.social.github,
+      site.social.twitter,
+      site.social.telegram,
+      site.social.medium,
+    ],
   };
 
   return (

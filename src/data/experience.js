@@ -70,8 +70,8 @@ export const experience = [
 export const achievements = [
   {
     id: 0,
-    title: "Story Protocol Hackathon",
-    description: "Built Proofa, a decentralized proof of authenticity platform. November 2025.",
+    title: "Story Protocol Hackathon Winner",
+    description: "Won the Story Protocol Hackathon with Proofa, a decentralized proof of authenticity platform. November 2025.",
   },
   {
     id: 1,

@@ -13,6 +13,8 @@ export default function Footer() {
           <span>{site.name}</span>
           <span className="text-border">·</span>
           <span className="text-accent">@{site.alias.toLowerCase()}</span>
+          <span className="text-border">·</span>
+          <span>{site.location}</span>
         </div>
         <div className="flex items-center gap-2 font-mono text-xs text-muted">
           <span className="h-1.5 w-1.5 rounded-full bg-accent" />

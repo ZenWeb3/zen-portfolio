@@ -41,7 +41,7 @@ export default function Hero() {
           <Reveal delay={0.5}>
             <p className="max-w-xl text-lg text-muted md:text-xl">
               {site.tagline} I'm {site.name}, known as{" "}
-              <span className="text-accent">{site.alias}</span> — working across
+              <span className="text-accent">{site.alias}</span>, working across
               software engineering, developer education, and Web3 infrastructure.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -58,7 +58,7 @@ export default function Hero() {
             <div className="grid grid-cols-3 gap-6 border-t border-border pt-6 md:justify-items-end">
               <AnimatedStat value={2} suffix="+" label="Hackathon Wins" />
               <AnimatedStat value={10} suffix="+" label="Projects Shipped" />
-              <AnimatedStat value={3} suffix="+" label="Years Building" />
+              <AnimatedStat value={4} suffix="+" label="Years Building" />
             </div>
           </Reveal>
         </div>

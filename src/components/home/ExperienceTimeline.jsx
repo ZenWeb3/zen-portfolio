@@ -19,7 +19,7 @@ export default function ExperienceTimeline() {
             index="03"
             kicker="Experience"
             title="Where I've worked"
-            description="Real-world products across healthcare, hospitality, and Web3 — plus the community work around them."
+            description="Real-world products across healthcare, hospitality, and Web3, plus the community work around them."
           />
 
           <div>

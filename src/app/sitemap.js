@@ -3,7 +3,7 @@ import { projects } from "@/data/projects";
 const siteUrl = "https://zen-five-liart.vercel.app";
 
 export default function sitemap() {
-  const staticRoutes = ["", "/writing", "/speaking"].map((path) => ({
+  const staticRoutes = ["", "/projects", "/writing"].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: new Date(),
     changeFrequency: "monthly",

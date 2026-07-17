@@ -13,7 +13,6 @@ const links = [
   { href: "/#about", label: "About" },
   { href: "/#work", label: "Projects" },
   { href: "/writing", label: "Writing" },
-  { href: "/speaking", label: "Speaking" },
   { href: "/#experience", label: "Experience" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -33,6 +32,13 @@ export default function Navbar() {
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <motion.header
@@ -84,7 +90,7 @@ export default function Navbar() {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3, ease: EASE }}
-          className="border-t border-border px-6 py-6 md:hidden"
+          className="border-t border-border bg-bg px-6 py-6 md:hidden"
         >
           <div className="flex flex-col gap-5">
             {links.map((link) => (

@@ -22,7 +22,7 @@ export default function SpeakingIndex() {
         <SectionHeading
           kicker="Speaking"
           title="Talks, workshops & panels"
-          description="Conference talks, workshops, and hackathon presentations — with slides and recordings where available."
+          description="Conference talks, workshops, and hackathon presentations, with slides and recordings where available."
         />
 
         <div className="mt-12">

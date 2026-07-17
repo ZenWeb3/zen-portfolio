@@ -19,6 +19,70 @@
 export const projects = [
   {
     id: 0,
+    slug: "warden",
+    title: "Warden",
+    description:
+      "A gasless, policy-gated firewall for autonomous on-chain agents, enforced on-chain instead of in a prompt.",
+    tech: ["Solidity", "Hardhat", "React", "Vite", "EVM"],
+    category: "hackathon",
+    github: "https://github.com/ZenWeb3/warden",
+    link: "https://warden-lemon-gamma.vercel.app",
+    featured: true,
+    award: "BOT Chain Builder Challenge #1",
+    caseStudy: [
+      "An LLM agent can propose an on-chain action, but it can never sign one on its own. WardenGuard sits between the agent and the chain: every proposed action is checked against six policies (per-tx spend cap, rolling 24h budget, destination allowlist, cooldown, slippage ceiling, session balance) inside the EVM before a signature exists. Actions that pass execute gaslessly through an EOA Paymaster; actions that fail are refused and recorded, not just rejected client-side.",
+      "Refusals don't revert. A hard revert would enforce the policy but drop the record of the attempt, since reverted transactions emit no persistent events. WardenGuard emits a Decision event either way, so every allowed or blocked action stays on the permanent chain history: a tamper-evident audit trail of agent behavior, built for the BOT Chain Builder Challenge's AI Agent track.",
+    ],
+    highlights: [
+      "Six on-chain policies enforced in the EVM before any signature exists",
+      "Gasless execution via an EOA Paymaster",
+      "Refuse-and-record model: blocked actions stay on-chain as Decision events instead of silent reverts",
+      "Separate owner and agent keys: the agent can only call screenAndExecute, never move funds unilaterally",
+    ],
+  },
+  {
+    id: 1,
+    slug: "amber",
+    title: "amber",
+    description:
+      "A Slack agent that learns which MCP tool to route a question to, and gets sharper from 👍/👎 feedback.",
+    tech: ["TypeScript", "Slack Bolt", "Gemini", "Model Context Protocol", "Supabase"],
+    category: "ai-agents",
+    github: "https://github.com/ZenWeb3/amber",
+    link: "#",
+    featured: true,
+    caseStudy: [
+      "Most Slack agents wire up one tool and hardcode when to call it. amber treats tool selection as a learned routing problem. A classifier extracts features from the incoming question, a router consults learned priors to pick the best of five connected MCP servers (GitHub, Google Drive, Calendar, Notion, and live web search), and a planner and executor carry out the query before a synthesizer writes the answer back into the thread.",
+      "Every thumbs up or thumbs down reaction on an answer feeds an evaluator that updates the router's priors in Supabase, so amber gets sharper at knowing which tool wins for which kind of question the more a team uses it. Built for the Slack Agent Builder Challenge, July 2026.",
+    ],
+    highlights: [
+      "Five-stage pipeline: classifier, router, planner, executor, synthesizer, plus a feedback evaluator",
+      "Routes across five MCP servers: GitHub, Google Drive, Calendar, Notion, and web search",
+      "Router state persisted in Supabase; reactions on answers retrain the routing priors",
+      "Built with Google Gemini 2.5 Flash and Slack Bolt in Socket Mode",
+    ],
+  },
+  {
+    id: 2,
+    slug: "umbra",
+    title: "Umbra",
+    description:
+      "Privacy-preserving binary prediction market with encrypted positions, built on Fhenix FHE.",
+    tech: ["TypeScript", "Solidity", "Fhenix FHE", "Next.js"],
+    category: "web3",
+    github: "https://github.com/ZenWeb3/Umbra",
+    link: "#",
+    featured: true,
+    caseStudy: [
+      "Umbra is a prediction market built around fully homomorphic encryption rather than bolted onto it afterward. Positions and order details stay encrypted end-to-end via Fhenix, so a market can settle correctly without exposing who bet what. It's an active build testing how far FHE can go as a privacy layer for on-chain markets.",
+    ],
+    highlights: [
+      "Encrypted positions end-to-end via Fhenix FHE; order details never hit the chain in plaintext",
+      "Binary prediction market architecture, built as a pnpm monorepo",
+    ],
+  },
+  {
+    id: 3,
     slug: "zeroreg",
     title: "zeroReg",
     description:
@@ -27,7 +91,6 @@ export const projects = [
     category: "open-source",
     github: "https://github.com/ZenWeb3/zeroreg",
     link: "https://zeroreg.xyz",
-    featured: true,
     caseStudy: [
       "Regular expressions are one of the least readable things a developer writes and one of the most common. zeroReg exists to close that gap: it lets you compose a pattern from plain, chainable methods and outputs the regular expression, so the intent of a pattern stays legible in code review months later.",
       "The library ships for both TypeScript and Python from a shared design, with documentation and examples aimed specifically at developers who avoid regex rather than developers who already know it cold.",
@@ -39,7 +102,7 @@ export const projects = [
     ],
   },
   {
-    id: 1,
+    id: 4,
     slug: "taisetsu",
     title: "Taisetsu",
     description:
@@ -48,29 +111,13 @@ export const projects = [
     category: "fintech",
     github: "https://github.com/ZenWeb3/taisetsu",
     link: "https://taisetsu.vercel.app",
-    featured: true,
     caseStudy: [
       "Taisetsu monetizes existing API endpoints without asking developers to touch their code. Paste a URL, set a price in USDC, and requests are metered and paid for through a proxy layer settled on-chain.",
       "Built with a Telegram bot as a companion interface for monitoring earnings, alongside a Next.js dashboard for setup and configuration.",
     ],
   },
   {
-    id: 2,
-    slug: "stashai",
-    title: "StashAI",
-    description:
-      "Financial management app for freelancers with inconsistent income. AI-powered insights and budgeting.",
-    tech: ["Next.js", "Supabase", "Gemini AI"],
-    category: "fintech",
-    github: "https://github.com/ZenWeb3/stashai",
-    link: "https://stashai-sigma.vercel.app",
-    featured: true,
-    caseStudy: [
-      "Freelance income is irregular by nature, and most budgeting tools assume a steady paycheck. StashAI models cash flow around that irregularity, using Gemini to turn raw transaction history into plain-language insight rather than another dashboard of charts.",
-    ],
-  },
-  {
-    id: 3,
+    id: 5,
     slug: "proofa",
     title: "Proofa",
     description: "Decentralized proof of authenticity platform built on Story Protocol.",
@@ -84,38 +131,18 @@ export const projects = [
     ],
   },
   {
-    id: 4,
-    slug: "whatsapp-chat-analyzer",
-    title: "WhatsApp Chat Analyzer",
-    description: "Tool to extract insights and details from WhatsApp chat exports.",
-    tech: ["React", "TypeScript", "Vite"],
-    category: "tools",
-    github: "https://github.com/ZenWeb3/whatsapp-tool",
-    link: "https://whatsapp-tool.vercel.app",
-  },
-  {
-    id: 5,
-    slug: "pharminventory",
-    title: "PharmInventory",
-    description:
-      "Comprehensive pharmacy inventory management system with role-based access control for Rootcare Pharmaceuticals.",
-    tech: ["Next.js", "PostgreSQL", "RBAC"],
-    category: "enterprise",
-    github: "#",
-    link: "#",
-    caseStudy: [
-      "A full-stack inventory system built for Rootcare Pharmaceuticals, with role-based access control separating pharmacist, procurement, and admin workflows, and stock tracking built to match how the pharmacy actually operates day to day.",
-    ],
-  },
-  {
     id: 6,
-    slug: "buildoor",
-    title: "Buildoor",
-    description: "Developer tools with OpenCV and MediaPipe integration. 3D frontend with Three.js.",
-    tech: ["HTML", "Three.js", "OpenCV", "MediaPipe"],
-    category: "tools",
-    github: "https://github.com/ZenWeb3/buildoor",
-    link: "#",
+    slug: "portfolio",
+    title: "Portfolio",
+    description:
+      "This site: a Next.js personal site, writing archive, and case-study index, built and designed from scratch.",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    category: "web",
+    github: "https://github.com/ZenWeb3/zen-portfolio",
+    link: "https://zen-five-liart.vercel.app",
+    caseStudy: [
+      "The portfolio is itself a project: a Next.js site with a hand-built design system, animated reveals, a writing and speaking index, and per-project case studies like this one.",
+    ],
   },
   {
     id: 7,
@@ -128,39 +155,15 @@ export const projects = [
     link: "#",
     contribution: true,
   },
-  {
-    id: 8,
-    slug: "zerodocs",
-    title: "ZeroDocs",
-    description:
-      "A platform that helps developers and teams generate README docs for public repositories.",
-    tech: ["Next.js", "TypeScript", "Grok", "Gemini AI"],
-    category: "open-source",
-    github: "https://github.com/zenweb3/zerodocs",
-    link: "https://zerodocs.pxxl.pro",
-    caseStudy: [
-      "ZeroDocs points at a public repository and generates a first-draft README from the actual code, aimed at the open-source maintainers who ship faster than they document.",
-    ],
-  },
-  {
-    id: 9,
-    slug: "toilet-flush",
-    title: "Toilet Flush",
-    description: "Lottery-based site for the toiletdust meme coin on Sui.",
-    tech: ["HTML", "JavaScript", "Sui SDK"],
-    category: "web",
-    link: "https://toilet.pxxl.pro/",
-    github: "#",
-  },
 ];
 
 export const projectCategories = [
   { id: "all", label: "All" },
-  { id: "open-source", label: "Open Source" },
-  { id: "fintech", label: "Fintech" },
   { id: "hackathon", label: "Hackathon" },
-  { id: "tools", label: "Tools" },
+  { id: "web3", label: "Web3" },
+  { id: "ai-agents", label: "AI Agents" },
+  { id: "fintech", label: "Fintech" },
+  { id: "open-source", label: "Open Source" },
   { id: "mobile", label: "Mobile" },
-  { id: "enterprise", label: "Enterprise" },
   { id: "web", label: "Web" },
 ];

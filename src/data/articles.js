@@ -8,7 +8,7 @@
  * @property {string|null} cover
  * @property {string[]} tags
  * @property {string} url
- * @property {"article"|"tutorial"|"guide"} kind
+ * @property {"article"} kind
  * @property {boolean} [featured]
  * @property {boolean} [sample] marks placeholder entries shown until real content replaces them
  */
@@ -17,34 +17,26 @@
 export const articles = [
   {
     id: 0,
-    title: "Publishing a Human-Readable Regex Builder to npm and PyPI",
-    platform: "Hashnode",
-    date: "2026-02-14",
-    readingTime: 7,
+    title: "Hyperliquid API Latency: What's Actually Slow, and Why It Matters When You Build",
+    platform: "Medium",
+    date: "2026-07-08",
+    readingTime: 6,
     cover: null,
-    tags: ["Open Source", "TypeScript", "Python"],
-    url: null,
+    tags: ["Hyperliquid", "APIs", "Performance"],
+    url: "https://medium.com/@samueledohoeket257/hyperliquid-api-latency-whats-actually-slow-and-why-it-matters-when-you-build-9ee0e5a291c5",
     kind: "article",
     featured: true,
-    sample: true,
   },
   {
     id: 1,
-    title: "A Field Guide to Onboarding Developers onto a Web3 SDK",
-    platform: "dev.to",
-    date: "2026-01-20",
-    readingTime: 9,
+    title: "Best Multichain Blockchain Data APIs in 2026",
+    platform: "Medium",
+    date: "2026-07-02",
+    readingTime: 6,
     cover: null,
-    tags: ["Developer Relations", "Web3", "SDKs"],
-    url: null,
-    kind: "guide",
-    sample: true,
+    tags: ["Blockchain", "APIs", "Multichain"],
+    url: "https://medium.com/@samueledohoeket257/best-multichain-blockchain-data-apis-in-2026-7dbe38eaef33",
+    kind: "article",
+    featured: true,
   },
-];
-
-export const articleKinds = [
-  { id: "all", label: "All" },
-  { id: "article", label: "Articles" },
-  { id: "tutorial", label: "Tutorials" },
-  { id: "guide", label: "Technical Guides" },
 ];
