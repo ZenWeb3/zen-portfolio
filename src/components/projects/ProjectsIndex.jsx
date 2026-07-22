@@ -42,7 +42,6 @@ export default function ProjectsIndex() {
                   project={project}
                   index={i}
                   delay={Math.min(i * 0.04, 0.2)}
-                  featured={project.featured}
                 />
               ))
             )}

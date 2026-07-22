@@ -8,7 +8,10 @@ import { site } from "@/data/site";
 
 export default function Contact() {
   return (
-    <section id="contact" className="border-t border-border py-24 md:py-40 scroll-mt-24">
+    <section
+      id="contact"
+      className="border-t border-border py-24 md:py-40 scroll-mt-24"
+    >
       <Container size="narrow" className="text-center">
         <Reveal>
           <span className="kicker">04 — Contact</span>
@@ -63,12 +66,6 @@ export default function Contact() {
               <Send className="h-4 w-4" /> Telegram
             </a>
           </div>
-        </Reveal>
-
-        <Reveal delay={0.4}>
-          <p className="mt-8 font-mono text-xs text-muted">
-            <span className="text-accent">Now —</span> {site.now}
-          </p>
         </Reveal>
       </Container>
     </section>

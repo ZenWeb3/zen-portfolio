@@ -132,16 +132,15 @@ export const projects = [
   },
   {
     id: 6,
-    slug: "portfolio",
-    title: "Portfolio",
-    description:
-      "This site: a Next.js personal site, writing archive, and case-study index, built and designed from scratch.",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    category: "web",
-    github: "https://github.com/ZenWeb3/zen-portfolio",
-    link: "https://zen-five-liart.vercel.app",
+    slug: "signet",
+    title: "Signet",
+    description: "An onchain successor vault on Monad, deployed at a deterministic address for each signet.",
+    tech: ["Solidity", "TypeScript", "Monad", "CREATE2"],
+    category: "web3",
+    github: "https://github.com/ZenWeb3/Signet",
+    link: "#",
     caseStudy: [
-      "The portfolio is itself a project: a Next.js site with a hand-built design system, animated reveals, a writing and speaking index, and per-project case studies like this one.",
+      "Signet is an onchain successor vault built on Monad. A factory contract, SignetFactory, deploys each vault at a deterministic address via CREATE2, keyed by a nonce-based salt so every signet gets a unique, predictable address. A public Wall page surfaces created signets on the frontend.",
     ],
   },
   {
@@ -165,5 +164,4 @@ export const projectCategories = [
   { id: "fintech", label: "Fintech" },
   { id: "open-source", label: "Open Source" },
   { id: "mobile", label: "Mobile" },
-  { id: "web", label: "Web" },
 ];

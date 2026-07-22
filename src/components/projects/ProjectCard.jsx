@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils";
 export default function ProjectCard({ project, index, delay = 0, featured = false }) {
   return (
     <Reveal delay={delay} className={cn(featured && "md:col-span-2")}>
-      <article className="group border-b border-border py-10 first:pt-0 md:py-12">
+      <article className="group border-b border-border py-10 md:py-12">
         <div
           className={cn(
-            "grid gap-6 md:gap-10",
-            featured ? "md:grid-cols-[1.1fr_1fr] md:items-center" : "md:grid-cols-[auto_1fr]",
+            "grid gap-6 md:items-center md:gap-10",
+            featured ? "md:grid-cols-[1.1fr_1fr]" : "md:grid-cols-[auto_1fr]",
           )}
         >
           <div
