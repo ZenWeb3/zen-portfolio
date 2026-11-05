@@ -19,6 +19,29 @@
 export const projects = [
   {
     id: 0,
+    slug: "create-cofhe-app",
+    title: "create-cofhe-app",
+    description:
+      "One command scaffolds a Fhenix CoFHE dApp — encrypted contracts, tests that run against the CoFHE mocks, and an optional frontend.",
+    tech: ["TypeScript", "Fhenix CoFHE", "Solidity", "Hardhat", "Foundry", "Next.js"],
+    category: "open-source",
+    github: "https://github.com/ZenWeb3/create-cofhe-app",
+    link: "#",
+    featured: true,
+    caseStudy: [
+      "Starting an FHE project means assembling a stack that only works in one exact configuration, and the failure modes name the wrong thing when you get it wrong. create-cofhe-app ships that configuration as a scaffolder: pick a toolchain (Hardhat or Foundry), a frontend (Next.js, Vite or none), and one of six encrypted patterns, and the generated project's own test suite passes immediately — no testnet, no API key, no network calls during scaffolding.",
+      "The patterns are the teaching surface. A sealed-bid auction finds a maximum with FHE.gt and FHE.select without revealing a bid; an encrypted ERC-20 uses FHE.gte and FHE.select in place of an underflow revert; an encrypted crowdfund publishes whether a goal was met while the amounts stay private. Beyond scaffolding, a cofhe binary handles the parts of FHE development that have no good error message: doctor catches the contracts/mocks version drift that otherwise fails with 'MockTaskManager should be marked as abstract' — an error naming neither package — and handle <ctHash> decodes an encrypted handle and reads its access list off-chain to answer why a value won't decrypt.",
+    ],
+    highlights: [
+      "Six encrypted patterns, each with a test suite that passes straight after scaffolding",
+      "cofhe doctor diagnoses the contracts/mocks version mismatch behind an error that names neither package",
+      "cofhe handle decodes a bytes32 handle and reads its on-chain access list — no key needed, only eth_call",
+      "cofhe deploy records the address and writes it into the frontend env file in one step",
+      "CI scaffolds every toolchain x pattern combination and runs the generated project's own tests",
+    ],
+  },
+  {
+    id: 1,
     slug: "warden",
     title: "Warden",
     description:
@@ -41,29 +64,51 @@ export const projects = [
     ],
   },
   {
-    id: 1,
-    slug: "amber",
-    title: "amber",
+    id: 2,
+    slug: "cre-price-snapshot",
+    title: "CRE Price Snapshot",
     description:
-      "A Slack agent that learns which MCP tool to route a question to, and gets sharper from 👍/👎 feedback.",
-    tech: ["TypeScript", "Slack Bolt", "Gemini", "Model Context Protocol", "Supabase"],
-    category: "ai-agents",
-    github: "https://github.com/ZenWeb3/amber",
+      "A Chainlink Runtime Environment workflow that reads a Data Feed price on Sepolia and writes it on-chain in a single HTTP-triggered run.",
+    tech: ["Solidity", "TypeScript", "Chainlink CRE", "Foundry", "EVM"],
+    category: "web3",
+    github: "https://github.com/ZenWeb3/chainlink-cre-assessment",
     link: "#",
-    featured: true,
     caseStudy: [
-      "Most Slack agents wire up one tool and hardcode when to call it. amber treats tool selection as a learned routing problem. A classifier extracts features from the incoming question, a router consults learned priors to pick the best of five connected MCP servers (GitHub, Google Drive, Calendar, Notion, and live web search), and a planner and executor carry out the query before a synthesizer writes the answer back into the thread.",
-      "Every thumbs up or thumbs down reaction on an answer feeds an evaluator that updates the router's priors in Supabase, so amber gets sharper at knowing which tool wins for which kind of question the more a team uses it. Built for the Slack Agent Builder Challenge, July 2026.",
+      "One HTTP trigger, one execution: the workflow takes a token name, reads that token's USD price from a Chainlink Data Feed through the EVM Read capability, and writes the answer to a PriceSnapshot contract through EVM Write, delivered as a DON-signed report the KeystoneForwarder verifies before calling onReport.",
+      "The hard requirement was storing the block at which the feed answer was last updated — and no view function on the aggregator returns it. latestRoundData gives timestamps; latestConfigDetails().blockNumber is the block the config was set, not the answer. The block lives only in the AnswerUpdated event, so the workflow masks the proxy round id down to the aggregator's own (phaseId << 64 | aggregatorRoundId), searches a window sized from how stale the answer is, and matches on the round id topic — which makes the result exact rather than approximate. If no matching log turns up it retries at the full cap and then fails loudly instead of storing a guess.",
     ],
     highlights: [
-      "Five-stage pipeline: classifier, router, planner, executor, synthesizer, plus a feedback evaluator",
-      "Routes across five MCP servers: GitHub, Google Drive, Calendar, Notion, and web search",
-      "Router state persisted in Supabase; reactions on answers retrain the routing priors",
-      "Built with Google Gemini 2.5 Flash and Slack Bolt in Socket Mode",
+      "Exact answer-block resolution by matching the AnswerUpdated round id, not an estimate",
+      "Reads pinned to the last finalized block so every DON node observes identical state",
+      "Forwarder check as the trust boundary: a single write path, address(0) rejected, ERC-165 implemented, replay rejected via StaleSnapshot",
+      "48 tests across Foundry and Bun, pinning the report byte layout from both sides so encode and decode cannot drift",
+      "Documents the Sepolia gas discrepancy (deployment 7.6x local, delivery 4.8x) that silently reverts onReport at a locally-derived gas limit",
     ],
   },
   {
-    id: 2,
+    id: 3,
+    slug: "geras",
+    title: "GERAS",
+    description:
+      "Dual-channel emergency alerting for road safety agencies. One tap on the roadside becomes a live incident on the dispatcher's map — over data, or over SMS when there is no signal.",
+    tech: ["Next.js", "TypeScript", "Supabase", "PostGIS", "Leaflet", "PWA"],
+    category: "civic-tech",
+    github: "https://github.com/ZenWeb3/GERAS",
+    link: "https://geras-two.vercel.app",
+    caseStudy: [
+      "GERAS is built around one hard problem: the moment a road user needs help is exactly when the network is least likely to work. It treats connectivity as three states rather than two — online, offline, and online with zero throughput — probing a health endpoint before choosing a channel and falling back to a prefilled SMS when the probe fails. The reporter is a PWA, so there is no install and no account; alerts that cannot send at all queue in IndexedDB and reconcile when signal returns.",
+      "Both channels land in the same pipeline. A data report and an SMS for the same event merge server-side on a shared six-character reference code through one upsert function, so a user who sends both produces exactly one incident row rather than two. Dispatchers work from a realtime console with a PostGIS-backed nearest-unit lookup over spheroid-accurate distances, and every status transition appends to an audit log that authenticated users cannot rewrite — the service-role key is confined to server-only paths so the trail cannot be bypassed by an RLS-restricted user.",
+    ],
+    highlights: [
+      "Automatic SMS failover: connectivity probe distinguishes real throughput from a dead connection",
+      "Atomic server-side dedup — SMS and data reports merge on a shared reference code into one incident",
+      "SMS payload fits one GSM-7 segment, with bounds validated at parse time and 20 tests on the parser/builder",
+      "PostGIS nearest-unit dispatch with GIST-indexed geodesic lookups and ETA estimates",
+      "TOTP MFA on all dispatcher access, RLS on every table, constant-time webhook auth, append-only audit log",
+    ],
+  },
+  {
+    id: 4,
     slug: "umbra",
     title: "Umbra",
     description:
@@ -82,7 +127,7 @@ export const projects = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     slug: "zeroreg",
     title: "zeroReg",
     description:
@@ -102,7 +147,7 @@ export const projects = [
     ],
   },
   {
-    id: 4,
+    id: 6,
     slug: "taisetsu",
     title: "Taisetsu",
     description:
@@ -117,7 +162,7 @@ export const projects = [
     ],
   },
   {
-    id: 5,
+    id: 7,
     slug: "proofa",
     title: "Proofa",
     description: "Decentralized proof of authenticity platform built on Story Protocol.",
@@ -131,20 +176,7 @@ export const projects = [
     ],
   },
   {
-    id: 6,
-    slug: "signet",
-    title: "Signet",
-    description: "An onchain successor vault on Monad, deployed at a deterministic address for each signet.",
-    tech: ["Solidity", "TypeScript", "Monad", "CREATE2"],
-    category: "web3",
-    github: "https://github.com/ZenWeb3/Signet",
-    link: "#",
-    caseStudy: [
-      "Signet is an onchain successor vault built on Monad. A factory contract, SignetFactory, deploys each vault at a deterministic address via CREATE2, keyed by a nonce-based salt so every signet gets a unique, predictable address. A public Wall page surfaces created signets on the frontend.",
-    ],
-  },
-  {
-    id: 7,
+    id: 8,
     slug: "zonex",
     title: "ZoneX",
     description: "Mobile app for mapping and navigating network dead zones.",
@@ -160,8 +192,8 @@ export const projectCategories = [
   { id: "all", label: "All" },
   { id: "hackathon", label: "Hackathon" },
   { id: "web3", label: "Web3" },
-  { id: "ai-agents", label: "AI Agents" },
   { id: "fintech", label: "Fintech" },
   { id: "open-source", label: "Open Source" },
+  { id: "civic-tech", label: "Civic Tech" },
   { id: "mobile", label: "Mobile" },
 ];

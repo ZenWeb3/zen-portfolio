@@ -34,7 +34,7 @@ export default function TalkCard({ talk, index, delay = 0 }) {
         <div>
           <div className="flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-wide text-muted">
             <Tag>{typeLabels[talk.type]}</Tag>
-            <span>{formatDate(talk.date)}</span>
+            <span>{formatDate(talk.date, { day: undefined })}</span>
             {talk.location && (
               <span className="flex items-center gap-1">
                 <MapPin className="h-3 w-3" /> {talk.location}

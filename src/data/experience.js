@@ -13,16 +13,25 @@
 export const experience = [
   {
     id: 0,
-    role: "Engineering Lead",
-    org: "Drift X",
-    period: "Current",
+    role: "Blockchain Developer",
+    org: "TCION Corp — WorldStreet",
+    period: "2026 — Current",
     description:
-      "Lead engineering at Drift X, a logistics ride-hailing platform for dispatch riders.",
+      "Develop and maintain features across the WorldStreet platform: integrating fiat payment services with third-party providers, building wallet functionality and payment flows, and shipping UI pages and routes wired to backend APIs.",
     type: "engineering",
     current: true,
   },
   {
     id: 1,
+    role: "Engineering Lead",
+    org: "Drift X",
+    period: "2025 — 2026",
+    description:
+      "Led engineering at Drift X, a logistics ride-hailing platform for dispatch riders.",
+    type: "engineering",
+  },
+  {
+    id: 2,
     role: "Software Developer",
     org: "Rootcare Pharmaceuticals",
     period: "2026",
@@ -31,7 +40,7 @@ export const experience = [
     type: "engineering",
   },
   {
-    id: 2,
+    id: 3,
     role: "IT & Networking Intern",
     org: "Ceedapeg Hotels",
     period: "2025 — 2026",
@@ -40,7 +49,7 @@ export const experience = [
     type: "engineering",
   },
   {
-    id: 3,
+    id: 4,
     role: "Mobile App Developer",
     org: "Suiver",
     period: "2025",
@@ -49,7 +58,7 @@ export const experience = [
     type: "engineering",
   },
   {
-    id: 4,
+    id: 5,
     role: "Frontend Developer Intern",
     org: "Kodehauz Solution Planet",
     period: "2024",

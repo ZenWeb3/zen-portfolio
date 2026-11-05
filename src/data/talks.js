@@ -17,24 +17,20 @@
 export const talks = [
   {
     id: 0,
-    event: "Story Protocol Hackathon",
-    topic: "Building Proofa: Proof of Authenticity On-Chain",
-    location: "Remote",
-    date: "2025-11-01",
-    photos: [],
+    event: "Fhenix Africa",
+    topic: "Onboarding Developers to Fhenix and FHE",
+    location: "Nigeria",
+    date: "2026-07-01",
+    photos: ["/images/fhennix-event.jpeg"],
     videoUrl: null,
     slidesUrl: null,
     description:
-      "Presented Proofa, a decentralized proof-of-authenticity platform built on Story Protocol, to hackathon judges. Won the hackathon.",
-    type: "hackathon",
-    sample: true,
+      "Onboarded developers to Fhenix, walking through what fully homomorphic encryption makes possible on-chain, the Fhenix SDK, and the use cases it unlocks.",
+    type: "workshop",
   },
 ];
 
 export const talkTypes = [
   { id: "all", label: "All" },
-  { id: "talk", label: "Talks" },
   { id: "workshop", label: "Workshops" },
-  { id: "hackathon", label: "Hackathons" },
-  { id: "panel", label: "Panels" },
 ];
