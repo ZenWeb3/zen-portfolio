@@ -12,6 +12,7 @@ const destinations = [
   { label: "About", href: "/#about" },
   { label: "Projects", href: "/#work" },
   { label: "Writing", href: "/writing" },
+  { label: "Speaking", href: "/speaking" },
   { label: "Experience", href: "/#experience" },
   { label: "Contact", href: "/#contact" },
 ];
