@@ -26,7 +26,7 @@ export const projects = [
     tech: ["TypeScript", "Fhenix CoFHE", "Solidity", "Hardhat", "Foundry", "Next.js"],
     category: "open-source",
     github: "https://github.com/ZenWeb3/create-cofhe-app",
-    link: "#",
+    link: "https://www.npmjs.com/package/create-cofhe-app",
     featured: true,
     caseStudy: [
       "Starting an FHE project means assembling a stack that only works in one exact configuration, and the failure modes name the wrong thing when you get it wrong. create-cofhe-app ships that configuration as a scaffolder: pick a toolchain (Hardhat or Foundry), a frontend (Next.js, Vite or none), and one of six encrypted patterns, and the generated project's own test suite passes immediately — no testnet, no API key, no network calls during scaffolding.",
